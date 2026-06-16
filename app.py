@@ -100,6 +100,8 @@ async def run_automation():
         print(df_deductions)
         print()
         
+        total_earnings =  df_earnings["Total Amount"].astype(str).str.replace(',','', regex=True).astype(float).sum()
+        print(f"Total Earnings: {total_earnings:,.2f}")
 
 async def  main():
     await run_automation()
