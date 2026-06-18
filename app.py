@@ -23,7 +23,7 @@ async def run_automation():
     
     # Browser crawl
     async with async_playwright() as playwright:
-        browser = await playwright.chromium.launch(headless=False)
+        browser = await playwright.chromium.launch(headless=True)
         context = await browser.new_context(viewport={"width": 1280, "height": 720})
         page = await context.new_page()
         
