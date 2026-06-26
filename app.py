@@ -23,7 +23,7 @@ async def run_automation():
     
     # Browser crawl
     async with async_playwright() as playwright:
-        browser = await playwright.chromium.launch(headless=True)
+        browser = await playwright.chromium.launch(headless=False)
         context = await browser.new_context(viewport={"width": 1280, "height": 720})
         page = await context.new_page()
         
@@ -49,7 +49,7 @@ async def run_automation():
                 if cleaned and cleaned not in clean_lines:
                     clean_lines.append(cleaned)
         
-        # print(clean_lines)
+        print(clean_lines)
 
         #Description\tHrs.\tAmount
         # print(clean_lines.index("Description\tAmount"))
@@ -57,7 +57,8 @@ async def run_automation():
         earnings_last_index = clean_lines.index("Description\tAmount") 
         
         deductions_starting_index = clean_lines.index("Description\tAmount") + 1
-        deductions_last_index = clean_lines.index("Total Taxable Income\t41,636.20\tTotal Deductions\t8,184.00")
+        # deductions_last_index = clean_lines.index("Total Taxable Income\t9,820.81\tTotal Deductions\t0.00")
+        deductions_last_index = clean_lines.index("Total Taxable Income\t9,473.80\tTotal Deductions\t1,512.50")
         # deductions_last_index = clean_lines.index("Non-taxable\t0.00")
         # print(clean_lines[deductions_starting_index])
         # print(clean_lines[deductions_last_index])
