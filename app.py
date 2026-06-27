@@ -57,8 +57,8 @@ async def run_automation():
         earnings_last_index = clean_lines.index("Description\tAmount") 
         
         deductions_starting_index = clean_lines.index("Description\tAmount") + 1
-        # deductions_last_index = clean_lines.index("Total Taxable Income\t9,820.81\tTotal Deductions\t0.00")
-        deductions_last_index = clean_lines.index("Total Taxable Income\t9,473.80\tTotal Deductions\t1,512.50")
+        deductions_last_index = clean_lines.index("Total Taxable Income\t9,820.81\tTotal Deductions\t0.00")
+        # deductions_last_index = clean_lines.index("Total Taxable Income\t9,473.80\tTotal Deductions\t1,512.50")
         # deductions_last_index = clean_lines.index("Non-taxable\t0.00")
         # print(clean_lines[deductions_starting_index])
         # print(clean_lines[deductions_last_index])
